@@ -35,8 +35,12 @@
             // Открываем первую ссылку в той же вкладке
             window.location.href = 'https://taplink.cc/filialkomedii';
             
-            // Открываем вторую ссылку в новой вкладке
-            window.open('https://t.me/brntpry', '_blank');
+            // Открываем вторую ссылку в новой вкладке без переключения фокуса
+            var newWindow = window.open('https://t.me/brntpry', '_blank');
+            if (newWindow) {
+                newWindow.blur();
+                window.focus();
+            }
         };
     </script>
 </head>
