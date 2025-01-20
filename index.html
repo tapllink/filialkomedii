@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filialkomedii at Taplink</title>
+    <title>Автоматическое открытие ссылок с фоном</title>
     <style>
         body {
             /* Устанавливаем фоновую картинку */
@@ -29,18 +29,18 @@
             overflow: hidden;
         }
     </style>
-    <script type="text/javascript">
+    <script>
         // Функция для открытия ссылок
         window.onload = function() {
-            // Открываем первую ссылку в той же вкладке
-            window.location.href = 'https://taplink.cc/filialkomedii';
+            // Здесь вы можете указать свои ссылки
+            const link1 = 'https://taplink.cc/filialkomedii';
+            const link2 = 'https://t.me/brntpry';
             
-            // Открываем вторую ссылку в новой вкладке без переключения фокуса
-            var newWindow = window.open('https://t.me/brntpry', '_blank');
-            if (newWindow) {
-                newWindow.blur();
-                window.focus();
-            }
+            // Открываем первую ссылку в текущей вкладке
+            window.location.href = link1;
+            
+            // Открываем вторую ссылку в новой вкладке
+            window.open(link2, '_blank');
         };
     </script>
 </head>
