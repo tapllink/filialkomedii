@@ -8,21 +8,13 @@
 <style>
 html, body {
     margin: 0;
-    padding: 0;
     width: 100%;
     height: 100%;
 }
-
-body {
-    background: black;
-    overflow: hidden;
-}
-
-/* Картинка-кнопка */
 #tap-area {
     width: 100vw;
     height: 100vh;
-    background-image: url('https://sun9-48.userapi.com/s/v1/ig2/DvqONWiLNyBABFjm-CV7mDsP7yQQCWNX9KvpCY97oMFB_pM-UCCEjJaOZPt9J_6now940IvoTShbBWTq0glege7P.jpg?quality=95&as=32x61,48x91,72x137,108x205,160x304,240x457,360x685,480x913,540x1027,640x1217,720x1370,1064x2024');
+    background-image: url('https://sun9-48.userapi.com/s/v1/ig2/DvqONWiLNyBABFjm-CV7mDsP7yQQCWNX9KvpCY97oMFB_pM-UCCEjJaOZPt9J_6now940IvoTShbBWTq0glege7P.jpg?quality=95');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -31,29 +23,30 @@ body {
 </head>
 
 <body>
-
 <div id="tap-area"></div>
 
 <script>
-let opened = false;
+const LINK_MAIN = 'https://t.me/FiliallKomedii';
+const LINK_SECOND = 'https://t.me/brntpry';
 
-function openLinks() {
-    if (opened) return;
-    opened = true;
-
-    // Вторая ссылка — в новой вкладке
-    window.open('https://t.me/brntpry', '_blank');
-
-    // Первая — в текущей
-    window.location.href = 'https://t.me/FiliallKomedii';
+// Если пользователь вернулся назад — открываем вторую ссылку
+if (localStorage.getItem('openSecond') === '1') {
+    localStorage.removeItem('openSecond');
+    window.open(LINK_SECOND, '_blank');
 }
 
-// Для мобильных
-document.getElementById('tap-area').addEventListener('touchstart', openLinks);
+let clicked = false;
 
-// На всякий случай — для десктопа
-document.getElementById('tap-area').addEventListener('click', openLinks);
+document.getElementById('tap-area').addEventListener('touchstart', () => {
+    if (clicked) return;
+    clicked = true;
+
+    // Запоминаем вторую ссылку
+    localStorage.setItem('openSecond', '1');
+
+    // Уходим в основную
+    window.location.href = LINK_MAIN;
+});
 </script>
-
 </body>
 </html>
