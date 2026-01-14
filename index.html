@@ -5,46 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Филиал Комедии</title>
+
     <style>
         body {
-            /* Устанавливаем фоновую картинку */
             background-image: url('https://sun9-2.userapi.com/impg/SALVjWQy1anK-KSTPXRE75NnhSA4DxAxJNArSA/Lnwl3CY9gCI.jpg?size=2560x1212&quality=95&sign=6c8475733d21e5294239844d3af955b8&type=album');
-            
-            /* Убедитесь, что изображение покрывает всю страницу */
             background-size: cover;
-            
-            /* Предотвращаем повторение изображения */
             background-repeat: no-repeat;
-            
-            /* Устанавливаем позицию изображения по центру */
             background-position: center;
-            
-            /* Устанавливаем фоновый цвет на случай, если изображение не загрузится */
             background-color: #f0f0f0;
-            
-            /* Убираем горизонтальные и вертикальные полосы прокрутки, если изображение слишком большое */
             margin: 0;
             height: 100vh;
-            /* Скрываем любой контент, если он есть */
             overflow: hidden;
         }
     </style>
+
     <script>
-        // Функция для открытия ссылок
-        window.onload = function() {
-            // Здесь вы можете указать свои ссылки
+        window.onload = function () {
             const link1 = 'https://t.me/FiliallKomedii';
             const link2 = 'https://t.me/brntpry';
-            
-            // Открываем первую ссылку в текущей вкладке
-            window.location.href = link1;
-            
-            // Открываем вторую ссылку в новой вкладке
+
+            // Пытаемся сначала открыть новую вкладку
             window.open(link2, '_blank');
+
+            // Небольшая задержка, чтобы браузер "успел"
+            setTimeout(function () {
+                window.location.href = link1;
+            }, 100);
         };
     </script>
 </head>
 <body>
-    <!-- Здесь нет контента, только фоновая картинка -->
+    <!-- Фон без контента -->
 </body>
 </html>
